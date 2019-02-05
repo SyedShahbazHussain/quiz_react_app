@@ -1,0 +1,12 @@
+.App {
+  height: 100vh;
+  display: flex;
+  color: white;
+}
+ 
+.App__Form {
+  width: 100%;
+  background-color: #66DAC7;
+  padding: 25px 40px;
+  overflow: auto;
+}
