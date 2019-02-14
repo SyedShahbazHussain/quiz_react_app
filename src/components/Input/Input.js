@@ -2,7 +2,7 @@ import React from 'react';
 
 const Input = (props) =>{
     const {
-        type, value, id, name, errors, onChange } = props;
+        type, value, id, name, placeholder, errors, onChange } = props;
         return(
             <div className="inputContainer">
             <div className="inputWrapper">
@@ -11,13 +11,16 @@ const Input = (props) =>{
              value={value}
              id={id}
              name={name}
-             onChange={onChange()} /> 
-             {errors.errorObj[name] && <div className="error=wrapper">
+             placeholder={placeholder}
+             onChange={onChange()} 
+             /> 
+             </div>
+             {errors.errorObj[name] && <div className="error-wrapper">
              <p className="error"> {errors.errorObj[name].message}</p>
              </div>
              }
-
-                </div></div>
+             </div>
+             
         )
         
     }
