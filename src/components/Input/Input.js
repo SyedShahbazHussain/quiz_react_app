@@ -15,7 +15,7 @@ const Input = (props) =>{
              onChange={onChange()} 
              /> 
              </div>
-             {errors.errorObj[name] && <div className="error-wrapper">
+             {errors.errorsObj[name] && <div className="error-wrapper">
              <p className="error"> {errors.errorObj[name].message}</p>
              </div>
              }

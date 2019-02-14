@@ -10,11 +10,20 @@ class Login extends Component {
               ],
               isAuth: false,
               currentUser: null,
+              errors:{
+                  hasError: false,
+                  errorsObj:{}
+
+              },
+              name: ""
          }
     }
     render() { 
-        return ( <div>
-                Login 
+        const {name} = this.state;
+        return ( 
+        <div>
+            <input type="text" value={name} name="name" id="name" placeholder="Enter your name here"
+            onChange={(ev)=> this.setState({[ev.target.name]:ev.target.value})}/>   
         </div> );
     }
 }
