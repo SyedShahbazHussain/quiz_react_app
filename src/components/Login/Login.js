@@ -15,15 +15,23 @@ class Login extends Component {
                   errorsObj:{}
 
               },
-              name: ""
+              name: "",
+              pass: "",
          }
     }
     render() { 
-        const {name} = this.state;
+        const {name, errors, pass} = this.state;
         return ( 
         <div>
-            <input type="text" value={name} name="name" id="name" placeholder="Enter your name here"
-            onChange={(ev)=> this.setState({[ev.target.name]:ev.target.value})}/>   
+            <form onSubmit={(ev) => this.onSubmit(ev)}>
+            
+            <input type="text" value={name} name="name" id="name" label="Username" placeholder="Enter your name here"
+            onChange={(ev)=> this.setState({[ev.target.name]:ev.target.value})} errors={errors}
+            />   
+            <input type="password" value={pass} name="pass" id="pass" label="Password" placeholder="Enter your password here"
+            onChange={(ev)=> this.setState({[ev.target.name]:ev.target.value})} errors={errors}
+            />  
+            </form>
         </div> );
     }
 }
