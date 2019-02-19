@@ -19,6 +19,11 @@ class Login extends Component {
             pass: "",
         }
     }
+
+    onSubmit =(ev)=>{
+        ev.preventDefault();
+        const {users} = this.state;
+    }
     render() {
         const { name, errors, pass } = this.state;
         return (
@@ -30,9 +35,14 @@ class Login extends Component {
                     <Input type="password" value={pass} name="pass" id="pass" label="Password" placeholder="Enter your password here"
                         onChange={(ev) => this.setState({ [ev.target.name]: ev.target.value })} errors={errors}
                     />
+                    <Input
+                    type="submit"
+                    value="Login"
+                    name="my-login-btn"
+                    id="my-btn"
+                    >
+                    </Input>
                 </form>
-
-
 
             </div>);
     }
