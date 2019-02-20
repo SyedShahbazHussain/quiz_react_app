@@ -25,6 +25,9 @@ class Login extends Component {
     onSubmit =(ev)=>{
         ev.preventDefault();
         const {users, errors, name,pass} = this.state;
+        users.filter{(user)=>{
+            return user.name === name && user.pass ===pass
+        }}
     }
     render() {
         const { name, errors, pass } = this.state;
